@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html ng-app="app">
+    <head>
+        <meta charset="utf-8">
+        <title>Magnifirewall</title>
+        <!-- fonts -->
+        <link href="https://fonts.googleapis.com/css?family=Orbitron|Questrial" rel="stylesheet">
+
+
+        <link rel="stylesheet" href="css/style.css" />
+        <link rel="stylesheet" href="css/dark.css" />
+        <!-- <link rel="stylesheet" href="css/light.css" /> -->
+        <script src="js/angular.js"></script>
+        <!-- route -->
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.25/angular-route.min.js"></script>
+        <script src="js/angular-app.js"></script>
+    </head>
+<body ng-app="app">
+    <ng-view></ng-view>
+
+    <!-- Template -->
+    <script type="text/ng-template" id="/events.html">
+    <nav id="navbar" class="navbar navbar-default square">
+        <div class="container-fluid">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+            <span class="sr-only">navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#"><span id="brand1">Magni</span><span id="brand2">firewall</span></a>
+        </div>
+    </nav>
+    <div class="container">
+    <div class="row">
+    <div class="col-md-6">
+    </div>
+    <div class="col-md-6">
+        <ul>
+            <div ng-repeat="event in events">
+                <div ng-class="(event.severity > 8) ? 'alert-danger' : 'alert-warning'" class="alert alert-dismissible">
+                    <button type="button" class="close" data-dismiss="alert">&times;</button>
+                    <strong>{{ event.type }}</strong>
+                    <p>{{ event.description }}</p>
+                    <p>Client ip: {{ event.ip }}</p>
+                    <button class="btn btn-default btn-xs pull-right">Kick Client</button>
+                    <div class="spacer"></div>
+
+                </div>
+            </div>
+        </ul>
+    </div>
+    </div>
+    </div>
+    </script>
+
+</body>
+</html>
+</body>
+</html>

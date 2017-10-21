@@ -1,0 +1,17 @@
+.spacer {
+    margin-top: 20px;
+}
+
+#navbar {
+    background-color: #464545;
+}
+
+#brand1 {
+    font-family: 'Orbitron', sans-serif;
+    color: lightgrey;
+    font-size: 17pt;
+}
+
+#brand2 {
+    font-family: 'Questrial', sans-serif;
+}

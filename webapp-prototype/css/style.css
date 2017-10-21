@@ -6,6 +6,15 @@
     background-color: #464545;
 }
 
+.black {
+    background-color: black;
+}
+
+.greyish {
+    background-color: #464545;
+    /*background-color: black;*/
+}
+
 #brand1 {
     font-family: 'Orbitron', sans-serif;
     color: lightgrey;

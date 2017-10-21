@@ -11,7 +11,7 @@
 }
 
 .greyish {
-    background-color: #464545;
+    /*background-color: #464545;*/
     /*background-color: black;*/
 }
 
@@ -23,4 +23,12 @@
 
 #brand2 {
     font-family: 'Questrial', sans-serif;
+}
+
+.table-striped > tbody > tr:nth-child(2n) > td, .table-striped > tbody > tr:nth-child(2n) > th {
+   background-color: #666666;
+}
+
+.table-top {
+    background-color: #8c8c8c;
 }

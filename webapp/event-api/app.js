@@ -17,6 +17,7 @@ mongoose.connect('mongodb://localhost/event-api')
 
 var index = require('./routes/index');
 var events = require('./routes/events');
+var connections = require('./routes/connections');
 
 var app = express();
 
@@ -35,6 +36,7 @@ app.use(express.static(path.join(__dirname, '/public')));
 
 app.use('/', index);
 app.use('/events', events);
+app.use('/connections', connections);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

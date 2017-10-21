@@ -25,7 +25,6 @@ angular.module('app', ['ngRoute'])
     $scope.timewasters = [
       { site: 'Facebook', ip: "3.23.142", time: "12:34pm"}, 
       { site: 'Reddit', ip: "3.23.142", time: "2:10"}, 
-      { site: 'Instagram', ip: "3.23.142", time: "1:34pm"}, 
       { site: 'Youtube', ip: "3.23.142", time: "3:24pm"}, 
     ];
     

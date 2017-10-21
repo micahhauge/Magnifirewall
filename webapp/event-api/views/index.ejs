@@ -83,10 +83,10 @@
             </div>
           </div>
         </div>
-        <div class="panel panel-default">
+        <div class="panel panel-default ">
           <div class="panel-heading">Who is wasting time?</div>
           <div class="panel-body">
-            <div ng-repeat="timewaster in timewasters" class="alert alert-dismissible alert-danger">
+            <div ng-repeat="timewaster in timewasters" class="alert alert-info alert-dismissible">
               <button type="button" class="close" data-dismiss="alert">&times;</button>
               <strong>Client using {{ timewaster.site }}</strong> 
               <p>IP address: {{ timewaster.ip }} </p>

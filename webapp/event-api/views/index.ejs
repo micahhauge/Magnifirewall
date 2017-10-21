@@ -1,11 +1,110 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <title><%= title %></title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
-  </head>
-  <body>
-    <h1><%= title %></h1>
-    <p>Welcome to <%= title %></p>
-  </body>
+<html ng-app="app">
+    <head>
+        <meta charset="utf-8">
+        <title>Magnifirewall</title>
+        <!-- fonts -->
+        <link href="https://fonts.googleapis.com/css?family=Orbitron|Questrial" rel="stylesheet">
+
+        <!-- chart -->
+        <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+
+        <link rel="stylesheet" href="css/style.css" />
+        <link rel="stylesheet" href="css/dark.css" />
+        <!-- <link rel="stylesheet" href="css/light.css" /> -->
+        <script src="js/angular.js"></script>
+        <script src="js/angular-timer.js"></script>
+        <script src="js/chart.js"></script>
+        <!-- route -->
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.25/angular-route.min.js"></script>
+        <script src="js/angular-app.js"></script>
+    </head>
+<body ng-app="app" class="black">
+    <ng-view></ng-view>
+
+    <!-- Template -->
+    <script type="text/ng-template" id="/events.html">
+    <nav id="navbar" class="navbar navbar-default square">
+        <div class="container-fluid">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+            <span class="sr-only">navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#"><span id="brand1">Magni</span><span id="brand2">firewall</span></a>
+        </div>
+    </nav>
+    <div class="container">
+
+
+    <!-- Conection graph and alerts row -->
+    <div class="row">
+    <div class="col-md-6">
+        <!-- chart  -->
+        <div id="chartContainer" style="height: 370px; width:100%;"></div>
+
+        <div class="spacer"></div>
+        <!-- ip table -->
+        <table class="table table-hover table-striped ">
+          <thead>
+            <tr class="table-top">
+              <th>#</th>
+              <th>IP address</th>
+              <th>device</th>
+              <th>Connection Time</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr ng-repeat="connection in connections">
+              <td>{{ $index }}</td>
+              <td>{{ connection.ip }}</td>
+              <td>{{ connection.device }}</td>
+              <td>{{ connection.timeOnNetwork }}</td>
+              <th><a href="" class="danger">X</a></th>
+            </tr>
+            <tr>
+          </tbody>
+        </table>
+
+    </div>
+    <div class="col-md-6 ">
+        <div class="panel panel-default">
+            <div class="panel-heading">Alerts</div>
+            <div class="panel-body">
+                <!-- Panel content -->
+                <ul>
+                    <div ng-repeat="event in events">
+                        <div ng-class="(event.severity > 8) ? 'alert-danger' : 'alert-warning'" class="alert alert-dismissible">
+                            <button type="button" class="close" data-dismiss="alert">&times;</button>
+                            <strong>{{ event.type }}</strong>
+                            <p>{{ event.description }}</p>
+                            <p>Client ip: {{ event.ip }}</p>
+                            <button class="btn btn-default btn-xs pull-right">Kick Client</button>
+                            <div class="spacer"></div>
+
+                        </div>
+                    </div>
+                </ul>
+            </div>
+        </div>
+
+
+
+
+
+
+
+    </div>
+    </div>
+
+
+    </div>
+    </script>
+
+</body>
+</html>
+</body>
 </html>

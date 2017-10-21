@@ -14,7 +14,21 @@ angular.module('app', ['ngRoute'])
         { ip: "1.42.152.35", device: 'Thinkpad', timeOnNetwork: '01:23:13'},
         { ip: "7.21.12.359", device: 'Android Device', timeOnNetwork: '00:20:02'},
         { ip: "1.42.152.35", device: 'MacbookPro', timeOnNetwork: '01:23:13'},
+        { ip: "8.41.102.35", device: 'Dell latitude', timeOnNetwork: '00:03:13'},
+        { ip: "7.21.12.359", device: 'IOS Device', timeOnNetwork: '00:20:02'},
+        { ip: "1.42.152.35", device: 'Thinkpad', timeOnNetwork: '01:23:13'},
+        { ip: "8.41.102.35", device: 'Dell latitude', timeOnNetwork: '00:03:13'},
+        { ip: "7.21.12.359", device: 'IOS Device', timeOnNetwork: '00:20:02'},
+        { ip: "1.42.152.35", device: 'Thinkpad', timeOnNetwork: '01:23:13'},
     ];
+    
+    $scope.timewasters = [
+      { site: 'Facebook', ip: "3.23.142", time: "12:34pm"}, 
+      { site: 'Reddit', ip: "3.23.142", time: "2:10"}, 
+      { site: 'Instagram', ip: "3.23.142", time: "1:34pm"}, 
+      { site: 'Youtube', ip: "3.23.142", time: "3:24pm"}, 
+    ];
+    
   }])
 
   .config(['$routeProvider', function ($routeProvider) {

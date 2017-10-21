@@ -84,19 +84,24 @@
                             <p>Client ip: {{ event.ip }}</p>
                             <button class="btn btn-default btn-xs pull-right">Kick Client</button>
                             <div class="spacer"></div>
-
+                            
                         </div>
                     </div>
                 </ul>
             </div>
         </div>
-
-
-
-
-
-
-
+        <div class="panel panel-default">
+          <div class="panel-heading">Who is wasting time?</div>
+          <div class="panel-body">
+            <div ng-repeat="timewaster in timewasters" class="alert alert-dismissible alert-danger">
+              <button type="button" class="close" data-dismiss="alert">&times;</button>
+              <strong>Client using {{ timewaster.site }}</strong> 
+              <p>IP address: {{ timewaster.ip }} </p>
+              Time: {{ timewaster.time }}
+              <button class="btn btn-default btn-xs pull-right">Kick Client</button>
+            </div>
+        </div>
+</div>
     </div>
     </div>
 
@@ -108,3 +113,4 @@
 </html>
 </body>
 </html>
+

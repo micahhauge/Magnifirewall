@@ -72,23 +72,16 @@
     </div>
     <div class="col-md-6 ">
         <div class="panel panel-default">
-            <div class="panel-heading">Alerts</div>
-            <div class="panel-body">
-                <!-- Panel content -->
-                <ul>
-                    <div ng-repeat="event in events">
-                        <div ng-class="(event.severity > 8) ? 'alert-danger' : 'alert-warning'" class="alert alert-dismissible">
-                            <button type="button" class="close" data-dismiss="alert">&times;</button>
-                            <strong>{{ event.type }}</strong>
-                            <p>{{ event.description }}</p>
-                            <p>Client ip: {{ event.ip }}</p>
-                            <button class="btn btn-default btn-xs pull-right">Kick Client</button>
-                            <div class="spacer"></div>
-                            
-                        </div>
-                    </div>
-                </ul>
+          <div class="panel-heading">Alerts</div>
+          <div class="panel-body">
+            <div ng-repeat="event in events" ng-class="(event.severity > 8) ? 'alert-danger' : 'alert-warning'" class="alert alert-dismissible">
+              <button type="button" class="close" data-dismiss="alert">&times;</button>
+              <strong>{{ event.type }}</strong> 
+              <p>IP address: {{ event.ip }} </p>
+              {{ event.description }}
+              <button class="btn btn-default btn-xs pull-right">Kick Client</button>
             </div>
+          </div>
         </div>
         <div class="panel panel-default">
           <div class="panel-heading">Who is wasting time?</div>
